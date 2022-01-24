@@ -1,0 +1,69 @@
+/* For styling the entire Joplin app (except the rendered Markdown, which is defined in `userstyle.css`) */
+
+/* Reduce the size and visibility of the header hash tags. */
+/* The additional CSS option must be enabled */
+div.CodeMirror .cm-header.cm-rm-header-token {
+	font-size: 0.7em;
+	color: grey;
+}
+
+div.CodeMirror .cm-header {
+    line-height: 2.2em;
+}
+
+
+/* Reduces the intensity of the italics (emph) and bold (strong) markdown tokens */
+div.CodeMirror .cm-em.cm-rm-em-token,
+div.CodeMirror .cm-strong.cm-rm-strong-token {
+	opacity: 0.5;
+}
+
+/* Add a vertical bar to the left side of quote blocks so they match the viewer */
+pre.cm-rm-blockquote.CodeMirror-line {
+    border-left: 4px solid var(--joplin-code-border-color);
+    opacity: 0.7;
+  }
+  
+  pre.cm-rm-blockquote span.cm-quote + span.cm-quote {
+    opacity: 1;
+  }
+  
+  /* WARNING: the below code will hide the > from quotes, use at your own risk  */
+  pre.cm-rm-blockquote span.cm-quote.cm-rm-list-token {
+    opacity: 0;
+  }
+ 
+
+  /* Changes the monospace font used for tabes/checkboxes */
+/* All fonts option must be enabled */
+div.CodeMirror .cm-overlay.cm-rm-monospace {
+	font-family: monospace !important;
+}
+
+/* strikeout and dim the text of a checked checkbox */
+div.CodeMirror span.cm-rm-checkbox.cm-property + span.cm-rm-checkbox ~ span.cm-rm-checkbox {
+	text-decoration: line-through;
+	opacity: 0.7;
+}
+
+/* Disable list colours for the default (Light) theme */
+div.CodeMirror .cm-s-default span.cm-variable-2, .cm-s-default span.cm-variable-3, .cm-s-default  span.cm-keyword {
+	color: #32373F;
+}
+
+/* Add list colours back in for just the token component of the list */
+div.CodeMirror .cm-overlay.cm-rm-list-token.cm-variable-2 {
+	color: blue;
+}
+div.CodeMirror .cm-overlay.cm-rm-list-token.cm-variable-3 {
+	color: orange;
+}
+div.CodeMirror .cm-overlay.cm-rm-list-token.cm-keyword {
+	color: green;
+}
+
+/* Match list spacing to the viewer */
+div.CodeMirror .cm-overlay.cm-rm-list-token {
+    line-height: 2em;
+    margin-left: 1em;
+  }
